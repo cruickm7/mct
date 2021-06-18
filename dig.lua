@@ -13,7 +13,8 @@ for j = 1, 4, 1 do
         turtle.forward()
         if k ~= d then
             turtle.placeDown()
-            turtle.turnLeft() 
+            turtle.turnLeft()
         end
     end
+    turtle.turnRight()
 end
