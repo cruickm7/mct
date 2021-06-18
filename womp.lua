@@ -49,6 +49,7 @@ function check()
         while turtle.suck() == "false" do
             turtle.suck()
         end
+        q = 0
     end
     if turtle.getItemCount(x) <= 1 then
         x = x + 1
