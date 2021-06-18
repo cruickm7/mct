@@ -46,7 +46,7 @@ function check()
         end
     end
     if q == 16 then
-        while ~turtle.suck() do
+        while turtle.suck() == "false" do
             turtle.suck()
         end
     end
