@@ -5,6 +5,7 @@ for j = 1, 4, 1 do
         turtle.placeDown()
         turtle.forward()
     end
+    turtle.back()
     for k = 0, d, 1 do
         turtle.forward()
         turtle.turnRight()
