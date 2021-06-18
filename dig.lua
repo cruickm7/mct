@@ -1,7 +1,7 @@
 d, x = ...
 turtle.up()
 for j = 1, 4, 1 do
-    for i = 1, x-d, 1 do
+    for i = 1, x-2, 1 do
         turtle.placeDown()
         turtle.forward()
     end
