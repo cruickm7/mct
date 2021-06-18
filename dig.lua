@@ -15,4 +15,5 @@ for j = 1, 4, 1 do
         end
         turtle.turnLeft()
     end
+    turtle.turnRight()
 end
