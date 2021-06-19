@@ -1,16 +1,37 @@
 d, s = ...
 g = 0
-if d ~= "1" then
-    x = s - d
-    elseif d == "1" then
-    x = s + 2
-    elseif d == "2" then
-    x = s
-end
+x = s - (d * 2 - 2)
 print(d .. s .. x)
+function fill()
+    print("Need cobble, hit enter to fill")
+    io.read()
+    for t = 16, 1, -1 do
+        turtle.select(t)
+        turtle.suckUp()
+        turtle.suckDown()
+    end
+    check()
+end
+
+function check()
+    c = 1
+    while c ~= 16 do
+        if turtle.getItemCount(c) ~= 0 then
+            turtle.select(c)
+            break
+        else
+            c = c + 1
+        end
+    end
+    if c == 16 then
+        fill()
+    end
+    print (c)
+end
 turtle.up()
 for j = 1, 4, 1 do
     for i = 1, x-2, 1 do
+        check()
         turtle.placeDown()
         turtle.forward()
         g = g + 1
@@ -23,6 +44,7 @@ for j = 1, 4, 1 do
         turtle.turnRight()
         turtle.forward()
         if k ~= d then
+            check()
             turtle.placeDown()
             turtle.turnLeft()
         end
