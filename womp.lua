@@ -21,7 +21,7 @@ function check()
         turtle.suckUp()
         p = check2()
     end
-    if turtle.getItemCount(x) <= 1 then
+    if turtle.getItemCount(x) == 1 or turtle.getItemCount(x) == 0 then
         x = x + 1
         turtle.select(x)
         if x == 16 then
