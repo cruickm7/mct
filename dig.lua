@@ -51,3 +51,8 @@ for j = 1, 4, 1 do
     end
     turtle.turnRight()
 end
+turtle.turnRight()
+turtle.forward()
+while turtle.inspectDown ~= "minecraft:lava" do
+end
+rednet.broadcast("go")
