@@ -2,6 +2,7 @@ d, s = ...
 g = 0
 x = s - (d * 2 - 2)
 print(d .. s .. x)
+rednet.open("right")
 function fill()
     print("Need cobble, hit enter to fill")
     io.read()
@@ -53,9 +54,8 @@ for j = 1, 4, 1 do
 end
 turtle.turnRight()
 turtle.forward()
-time = 0
-while turtle.inspectDown ~= "minecraft:lava" do
-    time = time + 1
-    print(time)
+turtle.placeDown()
+while turtle.inspectDown().name ~= "minecraft:lava" do
+    os.sleep(0.5)
 end
 rednet.broadcast("go")
