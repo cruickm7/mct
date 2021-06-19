@@ -12,14 +12,13 @@ function check2()
     return q
 end
 function check()
-    q = 1
     x = 1
-    check2()
-    while check2() >= 16 do
+    p = check2()
+    while p >= 16 do
         print("Need cobble, hit enter to fill")
         io.read()
         turtle.suck()
-        check2()
+        p = check2()
     end
     if turtle.getItemCount(x) <= 1 then
         x = x + 1
