@@ -48,6 +48,7 @@ function check()
     if q == 16 then
         while turtle.suck() == "false" do
             turtle.suck()
+            print("Need cobble")
         end
         q = 0
     end
