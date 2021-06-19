@@ -1,11 +1,8 @@
 rednet.open("right")
 turtle.up()
 for i = 1, 16, 1 do
-    local details = turtle.getItemDetail()
-    if details.name == "minecraft:lava_bucket" then
-        print(details.name)
-        turtle.select(i)
-        break
+    if turtle.getItemCount() ~= 0 then
+        print(turtle.getItemDetail.name)
     end
 end
 turtle.placeDown()
