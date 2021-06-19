@@ -6,10 +6,6 @@ turtle.up()
 for i = y, 1, -1 do
     for k = 4, 1, -1 do
         for j = i*2, 1, -1 do
-            if turtle.getItemCount(x) <= 1 then
-                x = x + 1
-                turtle.select(x)
-            end
             turtle.forward()
             if j ~= 1 then 
                 check()
@@ -39,7 +35,8 @@ z = z + 1
 print("Used " .. z  .. "blocks")
 
 function check()
-    q = 0
+    q = 1
+    x = 1
     for h = 1, 16, 1 do
         if turtle.getItemCount(h) <= 1 then
             q = q + 1
