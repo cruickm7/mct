@@ -1,4 +1,9 @@
-d, x = ...
+d, s = ...
+if d > 1 then
+    x = s - d
+    else
+    x = s
+end
 turtle.up()
 for j = 1, 4, 1 do
     for i = 1, x-2, 1 do
