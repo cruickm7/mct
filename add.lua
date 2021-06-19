@@ -15,7 +15,8 @@ search("minecraft:lava_bucket")
 turtle.placeDown()
 turtle.up()
 search("minecraft:cobblestone")
-while rednet.receive() ~= "go" do
-end
+turtle.placeDown()
+rednet.receive()
 search("minecraft:water_bucket")
+turtle.up()
 turtle.placeDown()
