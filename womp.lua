@@ -8,12 +8,13 @@ function fill()
     for t = 16, 1, -1 do
         turtle.select(t)
         turtle.suckUp()
+        turtle.suckDown()
     end
     check()
 end
 
 function check()
-    c = 0
+    c = 1
     while c ~= 16 do
         if turtle.getItemCount(c) ~= 0 then
             turtle.select(c)
@@ -25,6 +26,7 @@ function check()
     if c == 16 then
         fill()
     end
+    print (c)
 end
 
 turtle.up()

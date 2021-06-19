@@ -1,8 +1,10 @@
 d, s = ...
-if d > 1 then
+if d ~= "1" then
     x = s - d
-    else
-    x = s
+    elseif d == "1" then
+    x = s + 2
+    elseif d == "2" then
+        x = s + 2
 end
 turtle.up()
 for j = 1, 4, 1 do
