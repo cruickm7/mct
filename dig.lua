@@ -1,17 +1,21 @@
 d, s = ...
+g = 0
 if d ~= "1" then
     x = s - d
     elseif d == "1" then
     x = s + 2
     elseif d == "2" then
-        x = s + 2
+    x = s
 end
+print(d .. s .. x)
 turtle.up()
 for j = 1, 4, 1 do
     for i = 1, x-2, 1 do
         turtle.placeDown()
         turtle.forward()
+        g = g + 1
     end
+    print(g)
     for k = 0, d, 1 do
         if k ~= 0 then
            turtle.forward() 
