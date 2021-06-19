@@ -54,8 +54,10 @@ for j = 1, 4, 1 do
 end
 turtle.turnRight()
 turtle.forward()
-turtle.placeDown()
-while turtle.inspectDown().name ~= "minecraft:lava" do
-    os.sleep(0.5)
+local success, data = turtle.inspectDown()
+while data.name ~= "minecraft:lava" do
+    success, data = turtle.inspectDown()
+    os.sleep(1)
 end
+turtle.placeDown()
 rednet.broadcast("go")
