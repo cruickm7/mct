@@ -30,7 +30,7 @@ function check()
 end
 turtle.up()
 for j = 1, 4, 1 do
-    for i = 1, x-2, 1 do
+    for i = 1, x, 1 do
         check()
         turtle.placeDown()
         turtle.forward()
@@ -53,6 +53,9 @@ for j = 1, 4, 1 do
 end
 turtle.turnRight()
 turtle.forward()
+time = 0
 while turtle.inspectDown ~= "minecraft:lava" do
+    time = time + 1
+    print(time)
 end
 rednet.broadcast("go")
