@@ -2,31 +2,28 @@ x = 1
 y2 = ...
 y = y2/2-0.5
 z = 0
-
-function check2()
-    q=0
-    for h = 1, 16, 1 do
-        if turtle.getItemCount(h) <= 1 then
-            q = q + 1
-        end
-    end
-    return q
-end
-function check()
-    x = 1
-    p = check2()
-    while p >= 16 do
-        print("Need cobble, hit enter to fill")
-        io.read()
+function fill()
+    print("Need cobble, hit enter to fill")
+    io.read()
+    for t = 16, 1, -1 do
+        turtle.select(t)
         turtle.suckUp()
-        p = check2()
     end
-    if turtle.getItemCount(x) == 1 or turtle.getItemCount(x) == 0 then
-        x = x + 1
-        turtle.select(x)
-        if x == 16 then
-            x = 1
+    check()
+end
+
+function check()
+    c = 0
+    while c ~= 16 do
+        if turtle.getItemCount(c) ~= 0 then
+            turtle.select(c)
+            break
+        else
+            c = c + 1
         end
+    end
+    if c == 16 then
+        fill()
     end
 end
 
