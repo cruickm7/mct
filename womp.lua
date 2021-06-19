@@ -4,6 +4,7 @@ y = y2/2-0.5
 z = 0
 
 function check2()
+    q=0
     for h = 1, 16, 1 do
         if turtle.getItemCount(h) <= 1 then
             q = q + 1
@@ -17,7 +18,7 @@ function check()
     while p >= 16 do
         print("Need cobble, hit enter to fill")
         io.read()
-        turtle.suck()
+        turtle.suckUp()
         p = check2()
     end
     if turtle.getItemCount(x) <= 1 then
@@ -59,5 +60,5 @@ for i = y, 1, -1 do
 end
 turtle.placeDown()
 z = z + 1
-print("Used " .. z  .. "blocks")
+print("Used " .. z  .. " blocks")
 
