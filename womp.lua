@@ -3,20 +3,23 @@ y2 = ...
 y = y2/2-0.5
 z = 0
 
-function check()
-    q = 1
-    x = 1
+function check2()
     for h = 1, 16, 1 do
         if turtle.getItemCount(h) <= 1 then
             q = q + 1
         end
     end
-    if q == 16 then
-        while turtle.suck() == "false" do
-            turtle.suck()
-            print("Need cobble")
-        end
-        q = 0
+    return q
+end
+function check()
+    q = 1
+    x = 1
+    check2()
+    while check2() >= 16 do
+        print("Need cobble, hit enter to fill")
+        io.read()
+        turtle.suck()
+        check2()
     end
     if turtle.getItemCount(x) <= 1 then
         x = x + 1
