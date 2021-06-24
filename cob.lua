@@ -1,7 +1,7 @@
 t = 0
 while true do
     local s, d = turtle.inspect()
-    if s then
+    if d.name == "minecraft:stone" then
         turtle.dig()
         t = t + 1
         print(t)
