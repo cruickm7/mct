@@ -1,6 +1,7 @@
 t = 0
 while true do
-    if turtle.inspect() then
+    local s, d = turtle.inspect()
+    if s then
         turtle.dig()
         t = t + 1
         print(t)
