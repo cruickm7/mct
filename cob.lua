@@ -1,3 +1,4 @@
+t = 0
 while true do
     if turtle.inspect() then
         turtle.dig()
